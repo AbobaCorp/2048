@@ -2,6 +2,11 @@
 <h1>Game 2048 </h1>
 Game 2048 written in C++ using the SFML library
 
+# Installing the game
+## Windows
+The installer for Windows can be downloaded here:
+
+
 # Preview
 > ![](/img/1.png)
 > 
