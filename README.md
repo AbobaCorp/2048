@@ -20,6 +20,7 @@ git clone https://github.com/AbobaCorp/2048.git
 cd 2048
 g++ -c *.cpp
 g++ *.o -o game2048 -lsfml-graphics -lsfml-window -lsfml-system
+mkdir -p obj && mv *.o obj
 ./game2048
 ```
 
