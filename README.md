@@ -8,6 +8,16 @@ The installer for Windows can be downloaded [here](/setup/)
 
 ## Linux
 > Under development
+* Build for Ubontu/Debian
+```
+sudo apt update
+```
+```
+sudo apt install git build-essential libsfml-dev
+```
+```
+sudo apt update
+```
 
 # Preview
 > ![](/img/1.png)
