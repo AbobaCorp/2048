@@ -4,7 +4,7 @@ Game 2048 written in C++ using the SFML library
 
 # Installing the game
 ## Windows
-The installer for Windows can be downloaded [here]("/setup/setup_2048.exe"):
+The installer for Windows can be downloaded [here](/setup/):
 
 # Preview
 > ![](/img/1.png)
