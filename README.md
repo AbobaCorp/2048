@@ -16,7 +16,11 @@ sudo apt update
 sudo apt install git build-essential libsfml-dev
 ```
 ```
-sudo apt update
+git clone https://github.com/AbobaCorp/2048.git
+```
+```
+g++ -c *.cpp
+
 ```
 
 # Preview
