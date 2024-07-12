@@ -17,10 +17,10 @@ sudo apt install git build-essential libsfml-dev
 ```
 ```
 git clone https://github.com/AbobaCorp/2048.git
-```
-```
+cd 2048
 g++ -c *.cpp
-
+g++ *.o -o game2048 -lsfml-graphics -lsfml-window -lsfml-system
+./game2048
 ```
 
 # Preview
