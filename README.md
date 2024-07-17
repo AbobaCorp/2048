@@ -25,7 +25,7 @@ cd 2048 && rm player.data
 
 # Installing the game
 ## Windows
-The installer for Windows can be downloaded [here](/setup/)
+The installer for Windows can be downloaded [here](./setup/setup_2048.exe)
 
 ## Linux
 
