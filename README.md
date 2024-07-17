@@ -14,7 +14,7 @@ Control of the game:
 
 The game can save the best score and the playing field to a file. Therefore, if you want to reset your best score, do the following:
 * In Windows \
-Go to the folder with the game (by default it is stored in C:\Users\username\AppData\Local\Programs\Game2048 ) and delete the "player.data" file
+Go to the folder with the game (by default it is stored in C:\Users\\<username\>\AppData\Local\Programs\Game2048 ) and delete the "player.data" file
 * In Linux \
 Go to the directory with the main executable file of the game and delete the "player.data" file.
 (If you did the installation of the game, as in the instructions below, then open the terminal and run the following command)
@@ -47,6 +47,8 @@ mkdir -p obj && mv *.o obj
 Install git and g++ packages using the package manager of your distribution.
 
 Download the SFML SDK from the [download page](https://www.sfml-dev.org/download.php), unpack it and copy the files to your preferred location: either a separate path in your personal folder (like /home/me/sfml), or a standard path (like /usr/local).
+
+Instead of \<sfml-install-path\>, enter the path where the SFML directory is stored
 ```sh
 git clone https://github.com/AbobaCorp/2048.git
 cd 2048
