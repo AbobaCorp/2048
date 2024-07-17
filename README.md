@@ -48,7 +48,7 @@ Install git and g++ packages using the package manager of your distribution.
 
 Download the SFML SDK from the [download page](https://www.sfml-dev.org/files/SFML-2.6.1-linux-gcc-64-bit.tar.gz), unpack it and copy the files to your preferred location: either a separate path in your personal folder (like /home/me/sfml), or a standard path (like /usr/local).
 
-Instead of \<sfml-install-path\>, enter the path where the SFML directory is stored
+Here, \<sfml-install-path\> is the directory where you copied SFML
 ```sh
 git clone https://github.com/AbobaCorp/2048.git
 cd 2048
