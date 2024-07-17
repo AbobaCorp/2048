@@ -3,16 +3,6 @@
 game::field::field() {
 	addRandTiles();
 	addRandTiles();
-	//int count{};
-	//for (int i{}; i < 4; i++) {
-	//	for (int j{}; j < 4; j++) {
-	//		tiles[j][i] = count;
-	//		count++;
-	//	}
-	//}
-
-	//tiles[0][0] = 10;
-	//tiles[0][1] = 10;
 }
 
 bool game::field::move(char dir)

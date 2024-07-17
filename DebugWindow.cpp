@@ -48,16 +48,6 @@ void DebugWindow::draw(sf::RenderWindow& win)
 	}
 
 	if (!isMore) {
-		/*fpstext.setString(std::string("FPS ") + std::to_string(0xf4240 / time.asMicroseconds()));
-		fpstext.setOrigin(fpstext.getLocalBounds().width / 2.f, fpstext.getLocalBounds().height / 2.f);
-
-		sf::Vector2f size;
-		size.x = fpstext.getLocalBounds().width + 10;
-		size.y = fpstext.getLocalBounds().height + moretext.getLocalBounds().height + 15;
-		if (size.x > rect.getSize().x || size.y > rect.getSize().y) rect.setSize(size);
-
-		fpstext.setPosition(rect.getPosition().x + size.x / 2.f, rect.getPosition().y + 5);
-		moretext.setPosition(fpstext.getPosition().x, fpstext.getPosition().y + 15);*/
 		fpstext.setPosition(0, 0);
 
 		rect.setSize(sf::Vector2f(75, 30));

@@ -159,32 +159,6 @@ void sf::Field::move(char dir) {
 }
 
 sf::RectangleShape sf::Field::update() {
-	/*//rect.setSize(sf::Vector2f(500, 500));
-	//rect.setFillColor(sf::Color(187, 173, 160));
-
-	fldtx.clear();
-	//fldtx.draw(rect);
-	fldtx.draw(background);
-
-	rect.setSize(sf::Vector2f(108, 108));
-	for (int i{}; i < 4; i++) {
-		for (int j{}; j < 4; j++) {
-			if (!gf.at(i, j)) continue;
-			rect.setFillColor(colorTable[gf.at(i, j)]);
-			rect.setPosition(j * (108 + 13.6f) + 13.6f, i * (108 + 13.6f) + 13.6f);
-			fldtx.draw(rect);
-
-			text.setString(sf::String(to_string(0x1 << gf.at(i, j))));
-			text.setOrigin(text.getLocalBounds().width / 2.f, text.getLocalBounds().height / 2.f);
-			text.setPosition(j * (108 + 13.6f) + 13.6f + 52, i * (108 + 13.6f) + 13.6f + 40);
-			if (gf.at(i, j) < 3) text.setFillColor(sf::Color(119, 110, 101));
-			else text.setFillColor(sf::Color(249, 246, 242));
-			fldtx.draw(text);
-		}
-	}
-
-	fldtx.display();*/
-
 	if (!isAnimation()) {
 		if (flagGameOver) {
 			AnimGameOver();
@@ -228,7 +202,6 @@ void sf::Field::AnimMove() {
 				case 'w':
 					if (tlcoord[i][j].y - 1.f * time * speed <= (i - gf.atd(i, j)) * (108 + 13.6f) + 13.6f) {
 						tlcoord[i][j].y = (i - gf.atd(i, j)) * (108 + 13.6f) + 13.6f;
-						//cout << gf.atd(i, j) << ", " << tlcoord[i][j].x << ", " << tlcoord[i][j].y << endl;
 						break;
 					}
 					flagAnimMove = true;
@@ -259,7 +232,6 @@ void sf::Field::AnimMove() {
 					tlcoord[i][j].x += 1.f * time * speed;
 					break;
 				}
-				//rect.setFillColor(colorTable[gf.atp(i, j)]);
 				rect.setFillColor(colorTable[gf.atp(i, j) < 14 ? gf.atp(i, j) : 13]);
 				rect.setPosition(tlcoord[i][j]);
 				fldtx.draw(rect);
@@ -275,7 +247,6 @@ void sf::Field::AnimMove() {
 			else if (gf.atp(i, j)) {
 				if (gf.getRandTile().i == i && gf.getRandTile().j == j) continue;
 
-				//rect.setFillColor(colorTable[gf.atp(i, j)]);
 				rect.setFillColor(colorTable[gf.atp(i, j) < 14 ? gf.atp(i, j) : 13]);
 				rect.setPosition(j * (108 + 13.6f) + 13.6f, i * (108 + 13.6f) + 13.6f);
 				fldtx.draw(rect);
@@ -355,7 +326,6 @@ void sf::Field::AnimWt()
 					rect.setSize(sf::Vector2f(108, 108));
 					fldtx.draw(rect);
 
-					//rect.setFillColor(colorTable[gf.at(y, x)]);
 					rect.setFillColor(colorTable[gf.at(y, x) < 14 ? gf.at(y, x) : 13]);
 					rect.setOrigin(size / 2.f, size / 2.f);
 					rect.setPosition(x * (108 + 13.6f) + 13.6f + 54, y * (108 + 13.6f) + 13.6f + 54);
@@ -377,68 +347,7 @@ void sf::Field::AnimWt()
 						tlsize[i][j] += .5f * time * speed;
 					}
 				}
-				/*bool flag = false;
-				int x{}, y{};
-				if (!gf.atd(i, j)) continue;
-
-				switch (direction)
-				{
-				case 'w':
-					if (gf.atp(i, j) != gf.at(i - gf.atd(i, j), j)) {
-						flag = true;
-						x = j;
-						y = i - gf.atd(i, j);
-					}
-					break;
-
-				case 's':
-					if (gf.atp(i, j) != gf.at(i + gf.atd(i, j), j)) {
-						flag = true;
-						x = j;
-						y = i + gf.atd(i, j);
-					}
-					break;
-
-				case 'a':
-					if (gf.atp(i, j) != gf.at(i, j - gf.atd(i, j))) {
-						flag = true;
-						x = j - gf.atd(i, j);
-						y = i;
-					}
-					break;
-
-				case 'd':
-					if (gf.atp(i, j) != gf.at(i, j + gf.atd(i, j))) {
-						flag = true;
-						x = j + gf.atd(i, j);
-						y = i;
-					}
-					break;
-				}
-
-				if (!flag) continue;
-
-				if (tlsize[i][j] == -1) tlsize[i][j] = 108 + 10;
-
-				rect.setFillColor(colorTable[gf.at(y, x)]);
-				rect.setPosition(x * (108 + 13.6f) + 13.6f, y * (108 + 13.6f) + 13.6f);
-				rect.setSize(sf::Vector2f(tlsize[i][j], tlsize[i][j]));
-				fldtx.draw(rect);
-
-				text.setString(sf::String(to_string(0x1 << gf.at(y, x))));
-				text.setOrigin(text.getLocalBounds().width / 2.f, text.getLocalBounds().height / 2.f);
-				text.setPosition(x * (108 + 13.6f) + 13.6f + 52, y * (108 + 13.6f) + 13.6f + 40);
-				if (gf.at(y, x) < 3) text.setFillColor(sf::Color(119, 110, 101));
-				else text.setFillColor(sf::Color(249, 246, 242));
-				fldtx.draw(text);
-
-				if (tlsize[i][j] - .5f * time * speed <= 108) {
-					tlsize[i][j] = 108;
-				}
-				else {
-					flagAnimWt = true;
-					tlsize[i][j] -= .5f * time * speed;
-				}*/
+				
 			}
 
 			if (gf.getRandTile().i == i && gf.getRandTile().j == j) {
@@ -476,21 +385,6 @@ void sf::Field::AnimRand()
 	sf::Color color = colorTable[gf.getRandTile().data < 14 ? gf.getRandTile().data : 13];
 	color.a = 39 + static_cast<int>(size) * 2;
 	rect.setFillColor(color);
-	//switch (direction)
-	//{
-	//case 'w':
-	//	rect.setOrigin(size / 2.f, size / 2.f);
-	//	break;
-	//case 's':
-	//	rect.setOrigin(108 - size / 2.f, 108 - size / 2.f);
-	//	break;
-	//case 'd':
-	//	rect.setOrigin(108 - size / 2.f, size / 2.f);
-	//	break;
-	//case 'a':
-	//	rect.setOrigin(size / 2.f, 108 - size / 2.f);
-	//	break;
-	//}
 
 	rect.setOrigin(size / 2.f, size / 2.f);
 	rect.setPosition(x * (108 + 13.6f) + 13.6f + 54, y * (108 + 13.6f) + 13.6f + 54);
@@ -594,7 +488,6 @@ void sf::Field::withoutAnim(bool isDisplay)
 			text.setOrigin(text.getLocalBounds().width / 2.f, text.getLocalBounds().height / 2.f);
 			text.setPosition(j * (108 + 13.6f) + 13.6f + 52, i * (108 + 13.6f) + 13.6f + 40);
 			text.setFillColor((gf.at(i, j) < 3 ? sf::Color(119, 110, 101) : sf::Color(249, 246, 242)));
-			//text.setCharacterSize((gf.at(i, j) <= 9 ? 50 : 48));
 			fldtx.draw(text);
 		}
 	}

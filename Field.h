@@ -60,41 +60,25 @@ namespace sf {
 			{255,24,24 }
 		};
 
-		//текстура игрового поля
 		sf::RenderTexture fldtx;
-		//спрайт фона
 		sf::Sprite background;
-		//шрифт
 		sf::Font font;
-		//текст
 		sf::Text text;
-		//игровое поле
 		game::field gf;
 		sf::RoundedRectangleShape rect;
-		//готовый кадр
 		sf::RectangleShape fieldRect;
 
-		//лучший счет
 		int bestscore{};
-		//направление движения плиток
 		char direction{};
-		//флаг анимации движения плиток
 		bool flagAnimMove{};
-		//координаты плитки [i][j]
 		sf::Vector2f tlcoord[4][4]{};
-		//флаг анимации веса плитки
 		bool flagAnimWt{};
-		//размер плитки [i][j]
 		float tlsize[4][4]{};
-		//флаг анимации рандомной плитки
 		bool flagAnimRand{};
-		//размер случайной плитки
 		float randtlsize{};
 
-		//флаг анимации конца игры
 		bool flagGameOver{};
 		float valueGO{};
-		//флаг анимации победы
 		bool flagWin{};
 		float valueW{};
 
