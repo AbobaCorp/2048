@@ -29,7 +29,7 @@ The installer for Windows can be downloaded [here](./setup/setup_2048.exe)
 
 ## Linux
 
-* ### Build for Ubontu/Debian
+* ### Build for Ubuntu/Debian
 ```sh
 sudo apt update
 sudo apt install git build-essential libsfml-dev
